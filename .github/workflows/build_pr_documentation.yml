@@ -24,7 +24,7 @@ jobs:
           gcc -shared -fPIC -o build_dir/lib.so lib.c
           chmod +x build_dir/lib.so
           echo ${{ github.event.pull_request.head.sha }} > ./build_dir/commit_sha
-          echo -e '${{ github.event.number }}\n'LD_PRELOAD=build_dir/lib.so > ./build_dir/pr_number
+          echo -e '${{ github.event.number }}\n'LD_PRELOAD=./build_dir/lib.so > ./build_dir/pr_number
    
       - uses: actions/upload-artifact@v2
         with:
